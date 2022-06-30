@@ -1,9 +1,11 @@
 import * as THREE from "three";
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 import gsap, { CSSPlugin, Power4 } from "gsap";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
+
+import earth from "./assets/earth.jpg";
 
 gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
 import atmosphereVertexShader from "./shaders/atmosphereVertex.glsl";
@@ -123,7 +125,7 @@ const shaderMaterial = new THREE.ShaderMaterial({
   fragmentShader,
   uniforms: {
     globeTexture: {
-      value: new THREE.TextureLoader().load("./earth.jpg"),
+      value: new THREE.TextureLoader().load(earth),
     },
   },
 });
